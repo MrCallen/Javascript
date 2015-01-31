@@ -1,0 +1,43 @@
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+	function id( el ){
+			return document.getElementById( el );
+	}
+	function mostra( el ){
+			id( el ).style.display = 'block';
+	}
+	function esconde_todos( el, tagName ){
+			var tags = el.getElementsByTagName( tagName );
+			for( var i=0; i<tags.length; i++ )
+			{
+					tags[i].style.display = 'none';
+			}
+	}
+	window.onload = function()
+	{
+			id('cota').style.display = 'none';
+			id('extraordinario').style.display = 'none';
+		   
+			id('sel').onchange = function()
+			{
+					esconde_todos( id('option'), 'div' );
+					mostra( this.value );
+			}
+	}
+</script>
+       
+        <select name="sel" id="sel">
+                <option value="">--</option>
+                <option value="cota">Cota</option>
+                <option value="extraordinario">Extraordinario</option>
+        </select>
+       
+        <div id="option">
+                <div id="cota">Registar uma cota</div>
+                <div id="extraordinario">Registar uma entrada extraordinaria</div>
+        </div>
+</body>
+</html>
