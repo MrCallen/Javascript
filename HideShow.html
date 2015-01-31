@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.hide{
+	display: none;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("#telefone").hide();
+    $("#hide").hide();
+    $("#show").show();
+
+  });
+  $("#show").click(function(){
+    $("#telefone").show();
+    $("#show").hide();
+    $("#hide").show()
+  });
+});
+</script>
+
+</head>
+<body>
+
+<p class="hide" id="telefone">Aparece o telefone</p>
+<button class="hide" id="hide">Hide</button>
+<button class="show" id="show">Show</button>
+
+</body>
+</html>
